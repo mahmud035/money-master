@@ -11,7 +11,7 @@
   <body>
     <!-- Header Section -->
     <header class="container">
-      <h1>Monefy: Budget Expense Trackers</h1>
+      <h1 class="main-heading">Monefy: Budget Expense Trackers</h1>
     </header>
 
     <!-- Main Section -->
@@ -23,32 +23,46 @@
         <div class="monefy-calculation">
           <div class="income-part">
             <h3>Income</h3>
-            <label for="">Income: </label>
-            <input type="number" id="income-value" />
+            <div>
+              <label for="">Income: </label>
+              <input type="number" id="income-value" min="0" />
+            </div>
           </div>
           <div class="expenses-part">
             <h3>Expenses</h3>
-            <label for="">Food: </label>
-            <input type="number" id="food-value" /> <br />
-            <label for="">Rent: </label>
-            <input type="number" id="rent-value" /> <br />
-            <label for="">Clothes: </label>
-            <input type="number" id="clothe-value" />
+            <div>
+              <label for="">Food: </label>
+              <input type="number" id="food-value" min="0" />
+            </div>
+            <div>
+              <label for="">Rent: </label>
+              <input type="number" id="rent-value" min="0" />
+            </div>
+            <div>
+              <label for="">Clothes: </label>
+              <input type="number" id="clothe-value" min="0" />
+            </div>
           </div>
           <div class="calculation-part">
-            <button class="btn">Calculate</button>
-            <h3>Total Expenses: <span id="total-expenses">5500</span></h3>
-            <h3>Balance: <span id="balance">4500</span></h3>
+            <div>
+              <button class="btn calculate-btn">Calculate</button>
+              <h3>Total Expenses: <span id="total-expenses">5500</span></h3>
+              <h3>Balance: <span id="balance">4500</span></h3>
+            </div>
           </div>
           <div class="saving-part">
             <div>
               <span>Save: </span>
-              <input type="number" id="saving-percent" />
+              <input type="number" id="saving-percent" min="0" />
               <span> % </span>
               <button class="btn">Save</button>
             </div>
-            <h3>Saving Amount: <span id="save-amount">2000</span></h3>
-            <h3>Remaining Balance: <span id="remaining-balance">2500</span></h3>
+            <div>
+              <h3>Saving Amount: <span id="saving-amount">2000</span></h3>
+              <h3>
+                Remaining Balance: <span id="remaining-balance">2500</span>
+              </h3>
+            </div>
           </div>
         </div>
       </section>
