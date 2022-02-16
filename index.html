@@ -25,35 +25,37 @@
             <h3>Income</h3>
             <div>
               <label for="">Income: </label>
-              <input type="number" id="income-value" min="0" />
+              <input type="text" id="income-value" min="0" />
             </div>
           </div>
           <div class="expenses-part">
             <h3>Expenses</h3>
             <div>
               <label for="">Food: </label>
-              <input type="number" id="food-value" min="0" />
+              <input type="text" id="food-value" min="0" />
             </div>
             <div>
               <label for="">Rent: </label>
-              <input type="number" id="rent-value" min="0" />
+              <input type="text" id="rent-value" min="0" />
             </div>
             <div>
               <label for="">Clothes: </label>
-              <input type="number" id="clothe-value" min="0" />
+              <input type="text" id="clothe-value" min="0" />
             </div>
           </div>
           <div class="calculation-part">
             <div>
-              <button class="btn calculate-btn">Calculate</button>
-              <h3>Total Expenses: <span id="total-expenses">5500</span></h3>
-              <h3>Balance: <span id="balance">4500</span></h3>
+              <button class="btn calculate-btn" id="calculate-button">
+                Calculate
+              </button>
+              <h3>Total Expenses: <span id="total-expenses">00</span></h3>
+              <h3>Balance: <span id="balance">00</span></h3>
             </div>
           </div>
           <div class="saving-part">
             <div>
               <span>Save: </span>
-              <input type="number" id="saving-percent" min="0" />
+              <input type="text" id="saving-percent" min="0" />
               <span> % </span>
               <button class="btn">Save</button>
             </div>
