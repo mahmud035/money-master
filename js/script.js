@@ -34,24 +34,49 @@ document
     const total = document.getElementById('total-expenses');
 
     const balance = document.getElementById('balance');
+    const balanceAmount = incomeInputValue - totalExpense;
     // Error Handle: total expenses is higher than income
     if (totalExpense > incomeInputValue) {
       return alert(`Your expenses cannot exceed your income`);
     } else {
       total.innerText = totalExpense;
-      balance.innerText = incomeInputValue - totalExpense;
+      balance.innerText = balanceAmount;
     }
   });
 
 //Handle Save button event
 document.getElementById('save-button').addEventListener('click', function () {
-  const saveInput = document.getElementById('saving-percent');
-  const saveInputValue = parseFloat(saveInput.value);
+  // remaining balance
   const incomeInput = document.getElementById('income-value');
   const incomeInputValue = parseFloat(incomeInput.value);
+  const foodInput = document.getElementById('food-value');
+  const foodInputValue = parseFloat(foodInput.value);
+  const rentInput = document.getElementById('rent-value');
+  const rentInputValue = parseFloat(rentInput.value);
+  const clotheInput = document.getElementById('clothe-value');
+  const clotheInputValue = parseFloat(clotheInput.value);
+
+  const totalExpense = foodInputValue + rentInputValue + clotheInputValue;
+  const total = document.getElementById('total-expenses');
+  total.innerText = totalExpense;
+
+  const balance = document.getElementById('balance');
+  const balanceAmount = incomeInputValue - totalExpense;
+  balance.innerText = balanceAmount;
+
+  // saving amount
+  const saveInput = document.getElementById('saving-percent');
+  const saveInputValue = parseFloat(saveInput.value);
 
   const savingAmount = incomeInputValue * (saveInputValue / 100);
-
   const amount = document.getElementById('saving-amount');
-  amount.innerText = savingAmount;
+  // Error Handle: saving amount greater than balance
+  if (savingAmount > balanceAmount) {
+    return alert(`You can't save more than your balance`);
+  } else {
+    amount.innerText = savingAmount;
+  }
+  // remaining balance
+  const remainingBalance = balanceAmount - savingAmount;
+  document.getElementById('remaining-balance').innerText = remainingBalance;
 });
