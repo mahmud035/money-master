@@ -63,6 +63,7 @@ input[type='text'] {
 .monefy-calculation {
   background: #f8f8f8;
   padding-top: 2.5rem;
+  padding-bottom: 2rem;
 }
 
 .calculate-btn {
